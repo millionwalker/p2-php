@@ -1871,7 +1871,7 @@ ERR;
      *
      * @return  boolean  òQêl ID Ç™Ç†ÇÍÇŒ true
      */
-    function checkRoninExpiration()
+    static public function checkRoninExpiration()
     {
         global $_conf;
 

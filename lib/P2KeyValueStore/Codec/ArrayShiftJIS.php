@@ -23,7 +23,7 @@ class P2KeyValueStore_Codec_ArrayShiftJIS extends P2KeyValueStore_Codec_Array
      */
     public function encodeValue($array)
     {
-        mb_convert_variables('UTF-8', 'Shift_JIS', $array);
+        mb_convert_variables('UTF-8', 'sjis-win', $array);
         return parent::encodeValue($array);
     }
 

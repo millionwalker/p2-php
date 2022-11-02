@@ -55,7 +55,7 @@ if (!empty($_POST['submit_save'])) {
         $a_bbs = strtr(trim($na_info['bbs'], "\t\r\n"), "\t\r\n", "   ");
         $a_tt = strtr(trim($na_info['tt'], "\t\r\n"), "\t\r\n", "   ");
         $a_time = strtr(trim($na_info['ht']), "\t\r\n", "   ");
-        if($na_info['del']) continue;   // +Wiki
+        if(isset($na_info['del']) && $na_info['del']) continue;   // +Wiki
         if ($a_time === '') {
             $a_time = '--';
         }

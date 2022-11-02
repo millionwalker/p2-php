@@ -267,7 +267,7 @@ class NgAbornCtl {
                     continue;
                 }
                 // 内容解析(edit_aborn_word.php通りなら必ずこの順番になる)
-                if (preg_match('{^(?:<(regex|regexi|i)>)?(?:<bbs>(.+?)</bbs>)?(?:<title>(.+?)</title>)?(.+)$}s', $ar['word'], $matches)) {
+                if (preg_match('{^(?:<(regex|regex:i|i)>)?(?:<bbs>(.+?)</bbs>)?(?:<title>(.+?)</title>)?(.+)$}s', $ar['word'], $matches)) {
                     switch ($matches[1]) {
                         // 正規表現
                         case "regex":
@@ -280,7 +280,7 @@ class NgAbornCtl {
                             }
                             break;
                         // 正規表現・大文字小文字を無視
-                        case 'regexi':
+                        case 'regex:i':
                             if (P2_MBREGEX_AVAILABLE) {
                                 $ar['regex'] = 'mb_eregi';
                                 $ar['word'] = $matches[4];
